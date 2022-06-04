@@ -1,5 +1,5 @@
 //consulta asincrona
-let animales = (()=>{
+let consulta = (()=>{
     const url = "http://localhost:5500/animales.json";
     const getData = async () => {
         const res = await fetch(url)
@@ -9,4 +9,4 @@ let animales = (()=>{
     return (getData)
 })()
 
-export default animales;
+export default consulta;
