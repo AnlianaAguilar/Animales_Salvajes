@@ -23,7 +23,7 @@ document.getElementById("animal").addEventListener("change", async(event)=>{
 
 let lista_animales = [];
 document.getElementById("btnRegistrar").addEventListener("click", async ()=>{
-    
+    // validar()
     let nombre = document.getElementById("animal").value
     let edad = document.getElementById("edad").value
     let comentarios = document.getElementById("comentarios").value
@@ -37,23 +37,23 @@ document.getElementById("btnRegistrar").addEventListener("click", async ()=>{
     let urlImg = "assets/imgs/"+ animalEncontrado.imagen
     let urlSound = "assets/sounds/" + animalEncontrado.sonido
     
-    if (nombre=="Lobo"||nombre=="Leon"||nombre=="Oso"||nombre=="Serpiente"||nombre=="Aguila"){
+    if (nombre=="Lobo"){
         let animal = new Lobo(nombre,edad,urlImg,comentarios,urlSound)
         if (comentarios&&edad&&nombre){
-        lista_animales.push(animal)
-        document.getElementById("Animales").innerHTML += animal.generarCard() 
+            lista_animales.push(animal)
+            document.getElementById("Animales").innerHTML += animal.generarCard() 
         }else{
             alert("Debe completar todos los Campos")
         }   
     }
-/*    else if (nombre=="Leon"){
+    else if (nombre=="Leon"){
         let animal = new Leon(nombre,edad,urlImg,comentarios,urlSound)
         if (comentarios&&edad&&nombre){
             lista_animales.push(animal)
             document.getElementById("Animales").innerHTML += animal.generarCard() 
         }else{
             alert("Debe completar todos los Campos")
-        }  
+        }
     }
     else if (nombre=="Oso"){
         let animal = new Oso(nombre,edad,urlImg,comentarios,urlSound)
@@ -62,7 +62,7 @@ document.getElementById("btnRegistrar").addEventListener("click", async ()=>{
             document.getElementById("Animales").innerHTML += animal.generarCard() 
         }else{
             alert("Debe completar todos los Campos")
-        }  
+        }
     }
     else if (nombre=="Serpiente"){
         let animal = new Serpiente(nombre,edad,urlImg,comentarios,urlSound)
@@ -71,7 +71,7 @@ document.getElementById("btnRegistrar").addEventListener("click", async ()=>{
             document.getElementById("Animales").innerHTML += animal.generarCard() 
         }else{
             alert("Debe completar todos los Campos")
-        }  
+        }
     }
     else if (nombre=="Aguila"){
         let animal = new Aguila(nombre,edad,urlImg,comentarios,urlSound)
@@ -80,8 +80,8 @@ document.getElementById("btnRegistrar").addEventListener("click", async ()=>{
             document.getElementById("Animales").innerHTML += animal.generarCard() 
         }else{
             alert("Debe completar todos los Campos")
-        }   
-    }*/
+        }
+    }
     
     //limpiarcampos despues de registrar
     limpiarCampos()
@@ -138,3 +138,11 @@ function limpiarCampos(){
     document.getElementById("comentarios").value=""
     document.getElementById("preview").style.backgroundImage=""
 }
+
+// function validar(){
+// //     if (comentarios==""){
+        
+// //     }else{
+// //         alert("debe seleccionar un animal")
+// //     }
+// // }
