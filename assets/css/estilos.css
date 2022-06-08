@@ -48,3 +48,6 @@ body {
     max-width: 85% !important;
 }
 
+#button_modal{
+  width: 100%;
+}

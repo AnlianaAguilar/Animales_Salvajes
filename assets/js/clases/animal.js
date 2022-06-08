@@ -33,18 +33,14 @@ export default class Animal{
 
     generarCard(){
         let card = 
-        `<div class="col-md-3">
+        `<div class="col-md-4">
             <div class="card">
                 <a onclick="showModal('${this.nombre}')" data-toggle="modal" data-target="#exampleModal"><img src="${this.img}" class="img-fluid" alt="..."><a/>
-                <div class="card-body">                    
-                    <button type="button" class="btn btn-dark" onclick="playSound('${this.nombre}')">sonido</button>
-                </div>
+                <button id="button_modal" type="button" class="btn btn-secondary" onclick="playSound('${this.nombre}')"><i class="fa-solid fa-volume-high"></i></button>
             </div>
         </div>`
         return card
     }
 
-
 }
 
-// <h5 class="card-title">${this.nombre}</h5>
