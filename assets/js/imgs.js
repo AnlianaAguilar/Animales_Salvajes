@@ -17,16 +17,12 @@ document.getElementById("animal").addEventListener("change", async(event)=>{
     })
     //console.log(animalEncontrado)
     //console.log(animales)
-
     document.getElementById("preview").style.backgroundImage=`url(assets/imgs/${animalEncontrado.imagen})`
-
-
 
 })
 
 let lista_animales = [];
 document.getElementById("btnRegistrar").addEventListener("click", async ()=>{
-
 
     let nombre = document.getElementById("animal").value
     let edad = document.getElementById("edad").value
@@ -65,8 +61,10 @@ document.getElementById("btnRegistrar").addEventListener("click", async ()=>{
         let animal = new Aguila(nombre,edad,urlImg,comentarios,urlSound)
         lista_animales.push(animal)
         document.getElementById("Animales").innerHTML += animal.generarCard() 
-    }   
-
+    }
+    
+    //limpiarcampos despues de registrar
+    limpiarCampos()
     console.log("participante",lista_animales) 
 
  })
@@ -78,14 +76,13 @@ document.getElementById("btnRegistrar").addEventListener("click", async ()=>{
     let animalesModal = lista_animales.find((animal)=>animal.nombre==nombre)
     console.log(animalesModal)
     console.log(lista_animales)
-     modalbody.innerHTML= `<div class="col">
+    modalbody.innerHTML= `<div class="col">
                             <div class="card border-0">
                                 <img src="${animalesModal.img}" class="img-fluid" data-dismiss="modal" style="width: 19rem;"alt="...">
-                                <div class="card-body bg-dark text-white text-center fs-6 fw-light">
-                                    <h5 class="card-title ">${animalesModal.nombre}</h5>
-                                    <h5 class="card-title">${animalesModal.edad}</h5>
-                                    <h5 class="card-title">Comentarios</h5> 
-                                    <h5 class="card-title">${animalesModal.comentarios}</h5>                                                                 
+                                <div class="card-body bg-dark text-white text-center fs-6 fw-light text_modal">
+                                    <p class="card-titl">${animalesModal.edad}</p>
+                                    <p class="card-title">Comentarios</p><br/> 
+                                    <p class="card-title">${animalesModal.comentarios}</p>                                                                 
                                 </div>
                             </div>
                         </div>`
@@ -93,7 +90,7 @@ document.getElementById("btnRegistrar").addEventListener("click", async ()=>{
  }
 
 
-window.playSound = function(nombre){
+window.playSound = function(nombre){ //se coloca window para publico ya que se esta trabajando con module.
     console.log(nombre)
     let animalesSound = lista_animales.find((animal)=>animal.nombre==nombre)
     
@@ -113,4 +110,11 @@ window.playSound = function(nombre){
         animalesSound.chillar()
     }
    
+}
+
+function limpiarCampos(){
+    document.getElementById("animal").value=""
+    document.getElementById("edad").value=""
+    document.getElementById("comentarios").value=""
+    document.getElementById("preview").style.backgroundImage=""
 }

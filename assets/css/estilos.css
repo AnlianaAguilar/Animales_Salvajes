@@ -51,3 +51,8 @@ body {
 #button_modal{
   width: 100%;
 }
+
+.text_modal p{
+  font-size: 12px;
+  margin-bottom: 0px !important;  
+}
