@@ -8,6 +8,8 @@ export default class Oso extends Animal{
     }
 
     gruñir(){
-        
+        let player = document.getElementById("player")
+        player.setAttribute("src",this.sonido)
+        player.play() 
     }
 }

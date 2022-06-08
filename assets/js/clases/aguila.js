@@ -7,6 +7,8 @@ export default class Aguila extends Animal{
     }
 
     chillar(){
-        
+        let player = document.getElementById("player")
+        player.setAttribute("src",this.sonido)
+        player.play()      
     }
 }

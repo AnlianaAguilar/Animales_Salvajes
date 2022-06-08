@@ -5,6 +5,8 @@ export default class Lobo extends Animal{
     }
 
     aullar(){
-        
+        let player = document.getElementById("player")
+        player.setAttribute("src",this.sonido)
+        player.play()
     }
 }

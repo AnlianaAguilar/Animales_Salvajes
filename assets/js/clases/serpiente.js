@@ -8,6 +8,8 @@ export default class Serpiente extends Animal{
     }
 
     sisear(){
-        
+        let player = document.getElementById("player")
+        player.setAttribute("src",this.sonido)
+        player.play()
     }
 }
