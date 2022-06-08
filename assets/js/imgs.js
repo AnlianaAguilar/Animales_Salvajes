@@ -79,11 +79,13 @@ document.getElementById("btnRegistrar").addEventListener("click", async ()=>{
     console.log(animalesModal)
     console.log(lista_animales)
      modalbody.innerHTML= `<div class="col">
-                            <div class="card">
-                                <img src="${animalesModal.img}" class="img-fluid" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">${animalesModal.nombre}</h5>
-                                    <h5 class="card-title">${animalesModal.edad}</h5>                             
+                            <div class="card border-0">
+                                <img src="${animalesModal.img}" class="img-fluid" data-dismiss="modal" style="width: 19rem;"alt="...">
+                                <div class="card-body bg-dark text-white text-center fs-6 fw-light">
+                                    <h5 class="card-title ">${animalesModal.nombre}</h5>
+                                    <h5 class="card-title">${animalesModal.edad}</h5>
+                                    <h5 class="card-title">Comentarios</h5> 
+                                    <h5 class="card-title">${animalesModal.comentarios}</h5>                                                                 
                                 </div>
                             </div>
                         </div>`

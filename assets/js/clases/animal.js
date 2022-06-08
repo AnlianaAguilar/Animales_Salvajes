@@ -36,9 +36,8 @@ export default class Animal{
         `<div class="col-md-3">
             <div class="card">
                 <a onclick="showModal('${this.nombre}')" data-toggle="modal" data-target="#exampleModal"><img src="${this.img}" class="img-fluid" alt="..."><a/>
-                <div class="card-body">
-                    <h5 class="card-title">${this.nombre}</h5>
-                    <button type="button" class="btn btn-primary" onclick="playSound('${this.nombre}')">sonido</button>
+                <div class="card-body">                    
+                    <button type="button" class="btn btn-dark" onclick="playSound('${this.nombre}')">sonido</button>
                 </div>
             </div>
         </div>`
@@ -47,3 +46,5 @@ export default class Animal{
 
 
 }
+
+// <h5 class="card-title">${this.nombre}</h5>
