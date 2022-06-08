@@ -28,7 +28,22 @@ export default class Animal{
     }
 
     get sonido(){
-        return this._sonido
+        return this._sonido()
     }
+
+    generarCard(){
+        let card = 
+        `<div class="col-md-3">
+            <div class="card">
+                <a onclick="showModal('${this.nombre}')" data-toggle="modal" data-target="#exampleModal"><img src="${this.img}" class="img-fluid" alt="..."><a/>
+                <div class="card-body">
+                    <h5 class="card-title">${this.nombre}</h5>
+                    <button type="button" class="btn btn-primary" onclick="playSound('${this.nombre}')">sonido</button>
+                </div>
+            </div>
+        </div>`
+        return card
+    }
+
 
 }
