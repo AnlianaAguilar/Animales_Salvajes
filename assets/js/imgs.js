@@ -20,8 +20,7 @@ document.getElementById("animal").addEventListener("change", async(event)=>{
 
     document.getElementById("preview").style.backgroundImage=`url(assets/imgs/${animalEncontrado.imagen})`
 
-    // const animalIngestigacion = new Animal(animales.nombre, animales.edad, animales.preview, animales.comentarios)
-    // console.log(animalIngestigacion)
+
 
 })
 
@@ -66,15 +65,9 @@ document.getElementById("btnRegistrar").addEventListener("click", async ()=>{
         let animal = new Aguila(nombre,edad,urlImg,comentarios,urlSound)
         lista_animales.push(animal)
         document.getElementById("Animales").innerHTML += animal.generarCard() 
-    }
-   
-    //console.log("newAnimal",newAnimal)
+    }   
+
     console.log("participante",lista_animales) 
-    // document.getElementById("Animales").innerHTML += newAnimal.generarCard() 
-
-    //console.log("Variables",nombre, edad, comentarios, preview)
-    
-
 
  })
  
@@ -94,14 +87,28 @@ document.getElementById("btnRegistrar").addEventListener("click", async ()=>{
                                 </div>
                             </div>
                         </div>`
-                        console.log(modalbody)
+    console.log(modalbody)
  }
 
 
 window.playSound = function(nombre){
     console.log(nombre)
     let animalesSound = lista_animales.find((animal)=>animal.nombre==nombre)
-   if(nombre=="Leon"){
+    
+    if(nombre=="Leon"){
         animalesSound.rugir()
-   }
+    }
+    else if (nombre=="Lobo"){
+        animalesSound.aullar()
+    }
+    else if (nombre=="Oso"){
+        animalesSound.gruñir()
+    }
+    else if (nombre=="Serpiente"){
+        animalesSound.sisear()
+    }
+    else if (nombre=="Aguila"){
+        animalesSound.chillar()
+    }
+   
 }
